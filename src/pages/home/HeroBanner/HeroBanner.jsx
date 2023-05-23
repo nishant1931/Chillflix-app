@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import useFetch from "../../../hooks/useFetch.jsx";
 import Img from "../../../components/lazyLoadImage/Img.jsx";
 import { useSelector } from "react-redux";
 import ContentWrapper from "../../../components/contentWrapper/ContentWrapper.jsx";
 import "./style.scss";
+import useFetch from "../../../hooks/useFetch.jsx";
 
 const HeroBanner = () => {
   const [query, setQuery] = useState("");
@@ -15,12 +15,13 @@ const HeroBanner = () => {
 
   const { data, loading } = useFetch("/movie/upcoming");
 
+  const { poster } = url;
+
   useEffect(() => {
     const bg =
-      url.backdrop +
-      data?.results?.[Math.floor(Math.random() * 20)]?.backdrop_path;
+      poster + data?.results?.[Math.floor(Math.random() * 20)]?.poster_path;
     setBackground(bg);
-  }, [data]);
+  }, [data, poster]);
 
   const submitSearchHandler = (e) => {
     e.preventDefault();

@@ -4,7 +4,7 @@ import { SlMenu } from "react-icons/sl";
 import { VscChromeClose } from "react-icons/vsc";
 import ContentWrapper from "../contentWrapper/ContentWrapper";
 import "./style.scss";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 // import logo from "../../images/movix-logo.svg";
 
 const Header = () => {
@@ -19,6 +19,7 @@ const Header = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    setShowSearch(false);
   }, [location]);
 
   const openSearchHandler = () => {
@@ -74,7 +75,9 @@ const Header = () => {
     <header className={`header ${mobileMenu ? "mobileView" : ""} ${show}`}>
       <ContentWrapper>
         <div className="logo">
-          <h1> ChillFlix</h1>
+          <Link to="/">
+            <h1> ChillFlix</h1>
+          </Link>
         </div>
 
         <nav className="nav_items">
@@ -109,6 +112,7 @@ const Header = () => {
           <ContentWrapper>
             <form className="searchInput" onSubmit={submitSearchHandler}>
               <input
+                autoFocus
                 type="text"
                 placeholder="Search for a movie or tv show..."
                 onChange={(e) => setQuery(e.target.value)}
