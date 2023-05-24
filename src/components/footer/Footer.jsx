@@ -28,9 +28,9 @@ const Footer = () => {
           </li>
         </ul>
         <div className="info_text">
-          Chillflix is a single page movie application where you can check all
-          the latest Movies and TV shows. You can also watch the trailers here
-          for any movies and TV shows.
+          Chillflix is a dummy single page movie application where you can check
+          all the latest Movies and TV shows. You can also watch the trailers
+          here for any movies and TV shows.
         </div>
         <div className="social_icons">
           <span className="icon">
