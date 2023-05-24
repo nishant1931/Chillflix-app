@@ -17,7 +17,7 @@ const DetailsBanner = ({ video, crew }) => {
   const [videoId, setVideoId] = useState(null);
 
   const { mediaType, id } = useParams();
-  const { data, loading } = useFetch(`/${mediaType}/${id}`);
+  const { data, loading, error } = useFetch(`/${mediaType}/${id}`);
 
   const { url } = useSelector((state) => state.home);
 
@@ -50,17 +50,17 @@ const DetailsBanner = ({ video, crew }) => {
               <ContentWrapper>
                 <div className="content">
                   <div className="left">
-                    {data.poster_path ? (
+                    {data?.poster_path ? (
                       <Img
                         className="poster_img"
-                        src={url.background + data.poster_path}
-                        alt={data.title}
+                        src={url.background + data?.poster_path}
+                        alt={data?.title}
                       />
                     ) : (
                       <Img
                         className="poster_img"
                         src={PosterFallback}
-                        alt={data.title}
+                        alt={data?.title}
                       />
                     )}
                   </div>
@@ -74,12 +74,12 @@ const DetailsBanner = ({ video, crew }) => {
                     <Genres data={_genres} />
 
                     <div className="row">
-                      <CircleRating rating={data.vote_average.toFixed(1)} />
+                      <CircleRating rating={data?.vote_average?.toFixed(1)} />
                       <div
                         className="playbtn"
                         onClick={() => {
                           setShow(true);
-                          setVideoId(video.key);
+                          setVideoId(video?.key);
                         }}
                       >
                         <PlayIcon />

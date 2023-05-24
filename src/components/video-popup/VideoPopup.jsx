@@ -16,7 +16,6 @@ const VideoPopup = ({ show, setShow, videoId, setVideoId }) => {
           Close
         </span>
         <ReactPlayer
-          origin="true"
           allow="fullscreen"
           url={`https://www.youtube.com/watch?v=${videoId}`}
           controls
