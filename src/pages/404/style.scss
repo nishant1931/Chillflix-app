@@ -1,0 +1,17 @@
+.page_not_found {
+  height: 700px;
+  padding-top: 200px;
+  .content_wrapper {
+    text-align: center;
+    color: var(--black-light);
+    display: flex;
+    flex-direction: column;
+    .big_text {
+      font-size: 150px;
+      font-weight: 700;
+    }
+    .small_text {
+      font-size: 44px;
+    }
+  }
+}

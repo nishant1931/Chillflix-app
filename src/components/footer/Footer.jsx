@@ -10,14 +10,27 @@ const Footer = () => {
     <footer className="footer">
       <ContentWrapper>
         <ul className="menu_items">
-          <li className="menu_item">About me</li>
-          <li className="menu_item">Contact me 😀</li>
+          <li className="menu_item">
+            <a
+              href=" https://nishantsharma-portfolio.netlify.app/"
+              target="_blank"
+            >
+              About me
+            </a>
+          </li>
+          <li className="menu_item">
+            <a
+              href="https://api.whatsapp.com/send?phone=918384023627"
+              target="_blank"
+            >
+              Contact me 😀
+            </a>
+          </li>
         </ul>
         <div className="info_text">
           Chillflix is a single page movie application where you can check all
           the latest Movies and TV shows. You can also watch the trailers here
-          for any movies and TV shows. It is a dummy React project and used
-          Redux in it.
+          for any movies and TV shows.
         </div>
         <div className="social_icons">
           <span className="icon">
